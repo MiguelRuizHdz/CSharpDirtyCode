@@ -7,10 +7,13 @@ namespace Calculator
         static void Main(string[] args)
         {
             Console.WriteLine("Enter the operation (example: 5 - 2)");
-        Label:
+
             string[] num = Console.ReadLine().Split(' ');
-            if (num.Length == 3)
+            while (num.Length != 3)
             {
+                Console.WriteLine("Enter the operation (example: 5 - 2)");
+                num = Console.ReadLine().Split(' ');
+            }
                 double number1, number2, operationResult;
                 number1 = int.Parse(num[0]);
                 number2 = int.Parse(num[2]);
@@ -43,12 +46,6 @@ namespace Calculator
                 }
                 Console.WriteLine("Yay, it works!");
                 Console.Read();
-            }
-            else
-            {
-                Console.WriteLine("Please, enter all numbers");
-                goto Label;
-            }
         }
     }
 }
