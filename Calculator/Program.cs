@@ -48,7 +48,10 @@ namespace Calculator
         static string[] VerifyParseInts(string[] num)
         {
             if (!int.TryParse(num[0], out int resultParseNumber1) || (!int.TryParse(num[2], out int resultParseNumber2)))
+            {
                 num = new string[0];
+            }
+
             return num;
         }
     }
