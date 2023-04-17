@@ -9,43 +9,47 @@ namespace Calculator
             Console.WriteLine("Enter the operation (example: 5 - 2)");
 
             string[] num = Console.ReadLine().Split(' ');
+            num = VerifyInts(num);
+
             while (num.Length != 3)
             {
                 Console.WriteLine("Enter the operation (example: 5 - 2)");
                 num = Console.ReadLine().Split(' ');
+                num = VerifyInts(num);
             }
-                double number1, number2, operationResult;
-                number1 = int.Parse(num[0]);
-                number2 = int.Parse(num[2]);
-                if (num[1].Equals("+"))
-                {
-                    operationResult = number1 + number2;
-                    Console.WriteLine(operationResult);
-                }
-                else if (num[1].Equals("-"))
-                {
-                    operationResult = number1 - number2;
-                    Console.WriteLine(operationResult);
-                }
-                else if (num[1].Equals("*"))
-                {
-                    operationResult = number1 * number2;
-                    Console.WriteLine(operationResult);
-                }
-                else if (num[1].Equals("/") || num[2].Equals("\""))
-                {
-                    if (number2 == 0)
-                    {
-                        Console.WriteLine("Zero divide");
-                    }
-                    else
-                    {
-                        operationResult = number1 / number2;
-                        Console.WriteLine(operationResult);
-                    }
-                }
-                Console.WriteLine("Yay, it works!");
-                Console.Read();
+
+            int number1, number2, operationResult;
+            number1 = int.Parse(num[0]);
+            number2 = int.Parse(num[2]);
+            if (num[1].Equals("+"))
+            {
+                operationResult = number1 + number2;
+                Console.WriteLine(operationResult);
+            }
+            else if (num[1].Equals("-"))
+            {
+                operationResult = number1 - number2;
+                Console.WriteLine(operationResult);
+            }
+            else if (num[1].Equals("*"))
+            {
+                operationResult = number1 * number2;
+                Console.WriteLine(operationResult);
+            }
+            else if (num[1].Equals("/") || num[2].Equals("\""))
+            {
+                Console.WriteLine(number2 == 0 ? "Zero divide" : (number1 / number2).ToString());
+                    
+            }
+            Console.WriteLine("Yay, it works!");
+            Console.Read();
+        }
+
+        static string[] VerifyInts(string[] num)
+        {
+            if (!int.TryParse(num[0], out int resultParseNumber1) || (!int.TryParse(num[2], out int resultParseNumber2)))
+                num = new string[0];
+            return num;
         }
     }
 }
