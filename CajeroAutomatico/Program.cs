@@ -6,7 +6,7 @@ namespace CajeroAutomatico
     {
         static void Main(string[] args)
         {
-            int a = 0;
+            int operationSelected = 0;
             Program program = new Program();
 
             int deposito;
@@ -16,8 +16,8 @@ namespace CajeroAutomatico
             do
             {
                 program.menu();
-                int op = Convert.ToInt32(Console.ReadLine());
-                switch (op)
+                int operation = Convert.ToInt32(Console.ReadLine());
+                switch (operation)
                 {
                     case 1:
                         {
@@ -75,9 +75,9 @@ namespace CajeroAutomatico
                         break;
                 }
                 Console.ReadKey();
-                a = op;
+                operationSelected = operation;
 
-            } while (a != 4);
+            } while (operationSelected != 4);
 
         }
 
