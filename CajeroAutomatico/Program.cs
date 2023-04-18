@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace CajeroAutomatico
 {
@@ -6,6 +7,18 @@ namespace CajeroAutomatico
     {
         static void Main(string[] args)
         {
+
+            string BuildTitle(string title)
+            {
+                return @$"
+______________________________________________________________________
+                
+                    {title}
+______________________________________________________________________
+
+
+                ";
+            }
             Program program = new Program();
 
             int saldo = 5000;
@@ -18,41 +31,22 @@ namespace CajeroAutomatico
                 {
                     case 1:
                         {
-                            Console.WriteLine("");
-                            Console.WriteLine("______________________________________________________________________");
-                            Console.WriteLine("");
-                            Console.WriteLine("             INGRESE EL MONTO QUE DECEA DEPOSITAR  ");
-                            Console.WriteLine("______________________________________________________________________");
-                            Console.WriteLine("");
-                            Console.WriteLine("");
+                            Console.WriteLine(BuildTitle("INGRESE EL MONTO QUE DESEA DEPOSITAR"));
                             saldo = saldo + Convert.ToInt32(Console.ReadLine());
-                            Console.WriteLine("         TU MONTO DE DINERO SE AH GUARDADO CORRECTAMENTE");
+                            Console.WriteLine("TU MONTO DE DINERO SE HA GUARDADO CORRECTAMENTE");
                         }
                         break;
 
                     case 2:
                         {
-                            Console.WriteLine("");
-                            Console.WriteLine("_______________________________________________________________________");
-                            Console.WriteLine("");
-                            Console.WriteLine("                     CONSULTA DE SALDO");
-                            Console.WriteLine("_______________________________________________________________________");
-                            Console.WriteLine("");
-
+                            Console.WriteLine(BuildTitle("CONSULTA DE SALDO"));
                             Console.WriteLine("        TU SALDO ACTUAL ES {0} ", saldo);
                             Console.WriteLine("");
                         }
                         break;
                     case 3:
                         {
-
-                            Console.WriteLine("");
-                            Console.WriteLine("________________________________________________________________________");
-                            Console.WriteLine("");
-                            Console.WriteLine("                     INGRESE EL MONTO QUE DECEE RETIRAR ");
-                            Console.WriteLine("________________________________________________________________________");
-                            Console.WriteLine("");
-                            Console.WriteLine("");
+                            Console.WriteLine(BuildTitle("INGRESE EL MONTO QUE DESEE RETIRAR"));
                             int retiro = Convert.ToInt32(Console.ReadLine());
                             saldo = saldo - retiro;
                             Console.WriteLine("");
