@@ -48,8 +48,7 @@ namespace CSharpDirtyCode
                 {
                     Console.WriteLine("Ingrese el limite del contador");
                     var limiteContador = Console.ReadLine();
-                    int intLimiteContador = 0;
-                    int.TryParse(limiteContador, out intLimiteContador);
+                    int.TryParse(limiteContador, out int intLimiteContador);
 
                     for (int i = 1; i <= intLimiteContador; i++)
                     {
@@ -59,9 +58,9 @@ namespace CSharpDirtyCode
                 }
                 else if (menu == Menu.Vector)
                 {
-                    for (var i = 0; i < vectorEnteros.Length; i++)
+                    foreach (var item in vectorEnteros)
                     {
-                        Console.WriteLine(vectorEnteros[i]);
+                        Console.WriteLine(item);
                     }
                 }
                 else if (menu == Menu.Diccionario)
@@ -88,7 +87,7 @@ namespace CSharpDirtyCode
 
                     foreach (var item in diccionario)
                     {
-                        Console.WriteLine("Clave:" + item.Key + " - Valor:" + item.Value);
+                        Console.WriteLine($"Clave: {item.Key} - Valor: {item.Value}");
                     }
                 }
                 else
