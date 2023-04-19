@@ -17,7 +17,7 @@ namespace CSharpDirtyCode
 
             Console.WriteLine(saludo);
 
-            while (1 > 0)
+            while (true)
             {
                 Console.WriteLine("1=Mostrar año actual, 2=Valor del número pi, 3=Contador, 4=Vector, 5=Diccionario");
                 var numeroSeleccionado = Console.ReadLine();
@@ -69,6 +69,7 @@ namespace CSharpDirtyCode
                     string numeroIngresado = "";
                     Dictionary<int, int> diccionario = new Dictionary<int, int>();
                     int keyValue = 1;
+                    // Se ingresan los valores del diccionario hasta que el usuario ingrese el caracter punto(.)
                     while (!numeroIngresado.Equals("."))
                     {
                         numeroIngresado = Console.ReadLine();
