@@ -4,15 +4,14 @@ using System.Linq;
 
 namespace CSharpDirtyCode
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-
             (bool Result, int Nuumber) TryParseInt(string value)
             {
                 bool result = int.TryParse(value, out int valueResult);
-                return ( result, valueResult );
+                return (result, valueResult);
             }
             const string saludo = "Bienvenido a mi aplicación";
             var año = DateTime.Now.Year;
@@ -63,7 +62,6 @@ namespace CSharpDirtyCode
                             i++;
                         }
                     }
-
                 }
                 else if (menu == Menu.Vector)
                 {
@@ -91,7 +89,6 @@ namespace CSharpDirtyCode
                         }
                         catch
                         {
-
                         }
                     }
 

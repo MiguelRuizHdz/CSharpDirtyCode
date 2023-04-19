@@ -1,21 +1,18 @@
 ﻿using System;
-using System.Text;
 
 namespace CajeroAutomatico
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-
             string BuildTitle(string title)
             {
                 return @$"
 ______________________________________________________________________
-                
+
                     {title}
 ______________________________________________________________________
-
 
                 ";
             }
@@ -43,6 +40,7 @@ ______________________________________________________________________
                             Console.WriteLine("");
                         }
                         break;
+
                     case 3:
                         {
                             Console.WriteLine(BuildTitle("INGRESE EL MONTO QUE DESEE RETIRAR"));
@@ -53,6 +51,7 @@ ______________________________________________________________________
                             Console.WriteLine("");
                         }
                         break;
+
                     case 4:
                         {
                             //Mensaje de agradecimiento al final
@@ -64,9 +63,7 @@ ______________________________________________________________________
                 }
                 Console.ReadKey();
                 operationSelected = operation;
-
             } while (operationSelected != 4);
-
         }
     }
 }

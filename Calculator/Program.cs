@@ -2,9 +2,9 @@
 
 namespace Calculator
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             Console.WriteLine("Enter the operation (example: 5 - 2)");
 
@@ -39,13 +39,12 @@ namespace Calculator
             else if (num[1].Equals("/") || num[2].Equals("\""))
             {
                 Console.WriteLine(number2 == 0 ? "Zero divide" : (number1 / number2).ToString());
-
             }
             Console.WriteLine("Yay, it works!");
             Console.Read();
         }
 
-        static string[] VerifyParseInts(string[] num)
+        private static string[] VerifyParseInts(string[] num)
         {
             if (!int.TryParse(num[0], out int resultParseNumber1) || (!int.TryParse(num[2], out int resultParseNumber2)))
             {
