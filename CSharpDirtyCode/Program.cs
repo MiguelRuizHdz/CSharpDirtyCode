@@ -8,6 +8,12 @@ namespace CSharpDirtyCode
     {
         static void Main(string[] args)
         {
+
+            (bool Result, int Nuumber) TryParseInt(string value)
+            {
+                bool result = int.TryParse(value, out int valueResult);
+                return ( result, valueResult );
+            }
             const string saludo = "Bienvenido a mi aplicación";
             var año = DateTime.Now.Year;
             double numeroPi = 3.14;
@@ -48,13 +54,16 @@ namespace CSharpDirtyCode
                 {
                     Console.WriteLine("Ingrese el limite del contador");
                     var limiteContador = Console.ReadLine();
-                    int.TryParse(limiteContador, out int intLimiteContador);
-
-                    for (int i = 1; i <= intLimiteContador; i++)
+                    var parseResult = TryParseInt(limiteContador);
+                    if (parseResult.Result)
                     {
-                        Console.WriteLine(i);
-                        i++;
+                        for (int i = 1; i <= parseResult.Nuumber; i++)
+                        {
+                            Console.WriteLine(i);
+                            i++;
+                        }
                     }
+
                 }
                 else if (menu == Menu.Vector)
                 {
