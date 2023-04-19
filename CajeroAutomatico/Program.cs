@@ -19,13 +19,12 @@ ______________________________________________________________________
 
                 ";
             }
-            Program program = new Program();
 
-            int saldo = 5000;
+            int saldo = ProgramConsts.InitialAmount;
             int operationSelected;
             do
             {
-                program.menu();
+                Console.WriteLine(ProgramConsts.Menu);
                 int operation = Convert.ToInt32(Console.ReadLine());
                 switch (operation)
                 {
@@ -59,7 +58,7 @@ ______________________________________________________________________
                             //Mensaje de agradecimiento al final
                             Console.WriteLine("");
                             Console.WriteLine("           GRACIAS POR USAR EL SISTEMA DE CAJERO");
-                            Console.WriteLine("             AUTOMATICO MANICH, BUELBA PRONTO");
+                            Console.WriteLine("             AUTOMATICO MANICH, VUELVA PRONTO");
                         }
                         break;
                 }
@@ -68,26 +67,6 @@ ______________________________________________________________________
 
             } while (operationSelected != 4);
 
-        }
-
-
-        /// <summary>
-        /// Pinta el menu de la aplicacion de consola
-        /// </summary>
-        public void menu()
-        {
-            Console.WriteLine("______________________________________________________________________");
-            Console.WriteLine("                                                                  ");
-            Console.WriteLine("                   BIENBENIDO AL CAJERO AUTOMATICO");
-            Console.WriteLine("______________________________________________________________________");
-            Console.WriteLine("");
-            Console.WriteLine("      1.- DECEA DEPOSITAR");
-            Console.WriteLine("      2.- DECEA CONSULTAR SU SALDO");
-            Console.WriteLine("      3.- DECEA RETIRAR");
-            Console.WriteLine("      4.- DECEA SALIR");
-            Console.WriteLine("");
-            Console.WriteLine("______________________________________________________________________");
-            Console.WriteLine("");
         }
     }
 }
