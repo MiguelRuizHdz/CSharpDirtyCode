@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CSharpDirtyCode
 {
@@ -10,12 +11,9 @@ namespace CSharpDirtyCode
             const string saludo = "Bienvenido a mi aplicación";
             var año = DateTime.Now.Year;
             double numeroPi = 3.14;
-            int[] vectorEnteros = { 1, 2, 3, 4, 5 }; //new int[5];
-            vectorEnteros[0] = new Random().Next(100);
-            vectorEnteros[1] = new Random().Next(100);
-            vectorEnteros[2] = new Random().Next(100);
-            vectorEnteros[3] = new Random().Next(100);
-            vectorEnteros[4] = new Random().Next(100);
+            int[] vectorEnteros = new int[5];
+
+            vectorEnteros = vectorEnteros.ToList().Select(p => new Random().Next(100)).ToArray();
 
             Console.WriteLine(saludo);
 
@@ -35,7 +33,7 @@ namespace CSharpDirtyCode
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Excepción:" + ex.Message);
+                    Console.WriteLine($"Excepción: {ex.Message}");
                 }
 
                 if (menu == Menu.Año)
